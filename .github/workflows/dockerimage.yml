@@ -1,0 +1,17 @@
+name: Proftpd
+
+on: [push]
+
+jobs:
+
+  build:
+
+    runs-on: linux
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      with:
+        name: jms1989/proftpd
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
