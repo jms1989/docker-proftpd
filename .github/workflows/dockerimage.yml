@@ -11,6 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
+      uses: HurricanKai/Publish-Docker-Github-Action@master
       with:
         name: jms1989/proftpd
         username: ${{ secrets.DOCKER_USERNAME }}
